@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright © 2021 Tinkoff Bank
+  ~ Copyright © 2024 T-Bank
   ~
   ~  Licensed under the Apache License, Version 2.0 (the "License");
   ~  you may not use this file except in compliance with the License.
@@ -17,6 +17,6 @@
 
 <resources>
 
-    <color name="tinkoff_id_window_background">#121212</color>
+    <color name="tid_window_background">#121212</color>
 
 </resources>

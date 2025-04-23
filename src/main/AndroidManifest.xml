@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright © 2021 Tinkoff Bank
+  ~ Copyright © 2024 T-Bank
   ~
   ~  Licensed under the Apache License, Version 2.0 (the "License");
   ~  you may not use this file except in compliance with the License.
@@ -14,15 +14,13 @@
   ~ limitations under the License.
   -->
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ru.tinkoff.core.tinkoffId">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <queries>
         <intent>
             <action android:name="android.intent.action.VIEW" />
-            <category android:name="ru.tinkoff.partner.TINKOFF_APP" />
             <data
                 android:scheme="https"
                 android:host="www.tinkoff.ru" />
@@ -30,8 +28,8 @@
     </queries>
 
     <application>
-        <activity android:name=".ui.webView.TinkoffWebViewAuthActivity"
-            android:theme="@style/TinkoffIdAuth.Theme"
+        <activity android:name=".ui.webView.TidWebViewAuthActivity"
+            android:theme="@style/TidAuth.Theme"
             android:exported="false" />
     </application>
 

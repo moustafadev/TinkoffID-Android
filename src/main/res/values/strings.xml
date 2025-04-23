@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright © 2021 Tinkoff Bank
+  ~ Copyright © 2024 T-Bank
   ~
   ~  Licensed under the Apache License, Version 2.0 (the "License");
   ~  you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@
 
 <resources>
 
-    <string name="tinkoff_id_tinkoff_text">Tinkoff</string>
-    <string name="tinkoff_id_reload_menu_item_text">Перезагрузить</string>
-    <string name="tinkoff_id_close_button_text">Закрыть</string>
+    <string name="tid_tbank_text" translatable="false">Т-Банк</string>
+    <string name="tid_reload_menu_item_text">Перезагрузить</string>
+    <string name="tid_close_button_text">Закрыть</string>
 
 </resources>

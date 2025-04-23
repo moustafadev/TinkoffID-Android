@@ -15,11 +15,11 @@
   ~ limitations under the License.
   -->
 
-<resources>
-
-    <style name="TidAuth.Theme" parent="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <item name="tid_action_color">@color/tid_action_color</item>
-        <item name="android:windowBackground">@color/tid_window_background</item>
-    </style>
-
-</resources>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/tid_gray_button_pressed">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/tid_gray_button" />
+        </shape>
+    </item>
+</ripple>

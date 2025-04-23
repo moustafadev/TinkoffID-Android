@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright © 2021 Tinkoff Bank
+  ~ Copyright © 2024 T-Bank
   ~
   ~  Licensed under the Apache License, Version 2.0 (the "License");
   ~  you may not use this file except in compliance with the License.
@@ -17,22 +17,27 @@
 
 <resources>
 
-    <color name="tinkoff_id_text_yellow_style">#333333</color>
-    <color name="tinkoff_id_button_yellow_style">#FFDD2D</color>
-    <color name="tinkoff_id_button_pressed_yellow_style">#FAB619</color>
-    <color name="tinkoff_id_badge_yellow_style">#FFEE95</color>
+    <!-- Primary colors -->
+    <color name="tid_primary_text">#CC000000</color>
+    <color name="tid_primary_button">#FFDD2D</color>
+    <color name="tid_primary_button_pressed">#FAB619</color>
 
-    <color name="tinkoff_id_text_gray_style">#333333</color>
-    <color name="tinkoff_id_button_gray_style">#F5F5F6</color>
-    <color name="tinkoff_id_button_pressed_gray_style">#CECECF</color>
-    <color name="tinkoff_id_badge_gray_style">#FFFFFF</color>
+    <!-- White colors -->
+    <color name="tid_white_text">#CC000000</color>
+    <color name="tid_white_button">#FFFFFF</color>
+    <color name="tid_white_button_pressed">#DDDDDD</color>
 
-    <color name="tinkoff_id_text_black_style">#FFFFFF</color>
-    <color name="tinkoff_id_button_black_style">#000000</color>
-    <color name="tinkoff_id_button_pressed_black_style">#333333</color>
-    <color name="tinkoff_id_badge_black_style">#3D3D3D</color>
+    <!-- Gray colors -->
+    <color name="tid_gray_text">#CC000000</color>
+    <color name="tid_gray_button">#F5F5F6</color>
+    <color name="tid_gray_button_pressed">#E0E0E0</color>
 
-    <color name="tinkoff_id_action_color">#428BF9</color>
-    <color name="tinkoff_id_window_background">#FFFFFF</color>
+    <!-- Black colors -->
+    <color name="tid_black_text">#FFFFFF</color>
+    <color name="tid_black_button">#333333</color>
+    <color name="tid_black_button_pressed">#404040</color>
+
+    <color name="tid_action_color">#428BF9</color>
+    <color name="tid_window_background">#FFFFFF</color>
 
 </resources>

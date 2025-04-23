@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright © 2021 Tinkoff Bank
+  ~ Copyright © 2024 T-Bank
   ~
   ~  Licensed under the Apache License, Version 2.0 (the "License");
   ~  you may not use this file except in compliance with the License.
@@ -17,18 +17,18 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <declare-styleable name="TinkoffIdSignInButton" tools:ignore="ResourceName">
-        <attr name="tinkoff_id_compact" format="boolean"/>
-        <attr name="tinkoff_id_style" format="enum">
-            <enum name="yellow" value="0" />
-            <enum name="gray" value="1" />
-            <enum name="black" value="2" />
+    <declare-styleable name="TidSignInButton" tools:ignore="ResourceName">
+        <attr name="tid_compact" format="boolean"/>
+        <attr name="tid_style" format="enum">
+            <enum name="primary" value="0" />
+            <enum name="white" value="1" />
+            <enum name="gray" value="2" />
+            <enum name="black" value="3" />
         </attr>
-        <attr name="tinkoff_id_badge" format="string"/>
-        <attr name="tinkoff_id_title" format="string"/>
-        <attr name="tinkoff_id_corner_radius" format="dimension"/>
-        <attr name="tinkoff_id_font" format="reference"/>
+        <attr name="tid_title" format="string"/>
+        <attr name="tid_corner_radius" format="dimension"/>
+        <attr name="tid_font" format="reference"/>
     </declare-styleable>
 
-    <attr name="tinkoff_id_action_color" format="color" />
+    <attr name="tid_action_color" format="color" />
 </resources>
