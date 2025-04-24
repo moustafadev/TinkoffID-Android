@@ -1,8 +1,6 @@
 package ru.tbank.core.tid.codeVerifier
 
 import android.util.Base64 as Base64Android
-import kotlin.io.encoding.Base64 as Base64Kotlin
-import kotlin.io.encoding.ExperimentalEncodingApi
 
 public object Base64Encoder {
 
@@ -13,7 +11,7 @@ public object Base64Encoder {
         return try {
             AndroidEncoder.encodeToString(data, encodingSettings)
         } catch (e: AssertionError) {
-            KotlinEncoder.encodeToString(data)
+            return Base64Android.encodeToString(data, encodingSettings)
         }
     }
 
@@ -38,7 +36,7 @@ public object Base64Encoder {
         return try {
             AndroidEncoder.decode(data, encodingSettings)
         } catch (e: AssertionError) {
-            KotlinEncoder.decode(data)
+            return Base64Android.decode(data, encodingSettings)
         }
     }
 
@@ -57,16 +55,16 @@ public object AndroidEncoder {
     }
 }
 
-@OptIn(ExperimentalEncodingApi::class)
-public object KotlinEncoder {
-
-    public fun encodeToString(data: ByteArray): String {
-        return Base64Kotlin.UrlSafe
-            .encode(data)
-            .trimEnd('=') // cut off padding
-    }
-
-    public fun decode(data: ByteArray): ByteArray {
-        return Base64Kotlin.UrlSafe.decode(source = data)
-    }
-}
+//@OptIn(ExperimentalEncodingApi::class)
+//public object KotlinEncoder {
+//
+//    public fun encodeToString(data: ByteArray): String {
+//        return Base64Kotlin.UrlSafe
+//            .encode(data)
+//            .trimEnd('=') // cut off padding
+//    }
+//
+//    public fun decode(data: ByteArray): ByteArray {
+//        return Base64Kotlin.UrlSafe.decode(source = data)
+//    }
+//}

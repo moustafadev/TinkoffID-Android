@@ -10,8 +10,8 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import ru.tbank.core.tid.TidAppLinkUtil
-import ru.tbank.core.tid.R
 import ru.tbank.core.tid.error.TidLoggingConstants.LOG_TAG
+import tbank.core.tid.R
 
 /**
  * @author k.voskrebentsev

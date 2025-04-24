@@ -28,7 +28,7 @@ import okhttp3.RequestBody
 import okio.ByteString.Companion.encodeUtf8
 import ru.tinkoff.core.components.security.ssltrusted.certs.SslTrustedCerts.enrichWithTrustedCerts
 import ru.tinkoff.core.components.security.ssltrusted.certs.TargetStandRootCertsProvider
-import ru.tbank.core.tid.BuildConfig
+
 import java.util.concurrent.TimeUnit
 
 /**
@@ -47,7 +47,7 @@ internal class TidApi(
             .add(FIELD_VENDOR, PARAM_DEFAULT_VENDOR)
             .add(FIELD_CODE_VERIFIER, codeVerifier)
             .add(FIELD_CLIENT_ID, clientId)
-            .add(FIELD_CLIENT_VERSION, BuildConfig.VERSION_NAME)
+            .add(FIELD_CLIENT_VERSION, "1.0.5")
             .build()
 
         return createRequest(PATH_TOKEN, formBody, clientId)
@@ -59,7 +59,7 @@ internal class TidApi(
             .add(FIELD_REFRESH_TOKEN, refreshToken)
             .add(FIELD_VENDOR, PARAM_DEFAULT_VENDOR)
             .add(FIELD_CLIENT_ID, clientId)
-            .add(FIELD_CLIENT_VERSION, BuildConfig.VERSION_NAME)
+            .add(FIELD_CLIENT_VERSION, "1.0.5")
             .build()
 
         return createRequest(PATH_TOKEN, formBody, clientId)

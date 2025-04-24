@@ -1,10 +1,57 @@
-apply from: '../gradle/plugin/android.gradle'
-apply from: '../gradle/plugin/publish-lib.gradle'
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
+
+apply from: 'gradle/versions.gradle'
+
+def useMavenLocal = project.hasProperty("useMavenLocal")
+print("useMavenLocal = " + useMavenLocal)
+
+buildscript {
+    apply from: 'gradle/versions.gradle'
+
+    repositories {
+        // mavenLocal() // Uncomment when testing on Maven local repository
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:${androidPluginVersion}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${detektVersion}"
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:${dokkaVersion}"
+        classpath "org.jacoco:org.jacoco.core:$jacocoVersion"
+    }
+}
+
+allprojects {
+    repositories {
+        if (useMavenLocal) mavenLocal()
+        google()
+        mavenCentral()
+    }
+}
+
+subprojects {
+    afterEvaluate { project ->
+        project.apply from: "$project.rootDir/gradle/plugin/jacoco-test-report.gradle"
+    }
+}
 android {
-    namespace 'ru.tbank.core.tid'
-    resourcePrefix 'tid_'
+    namespace 'tbank.core.tid'
+    compileSdk 34
 
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    defaultConfig {
+        minSdk 21
+    }
     testOptions {
         unitTests.includeAndroidResources = true
     }
@@ -12,8 +59,12 @@ android {
     buildFeatures {
         buildConfig true
     }
+    // باقي الإعدادات
 }
 
+//task clean(type: Delete) {
+//    delete rootProject.buildDir
+//}
 dependencies {
     implementation "ru.tinkoff.core.components.security:ssl-trusted-certs:$sslTrustedCertsVersion"
     implementation "ru.tinkoff.core.components.security:ssl-trusted-certs-prod:$sslTrustedCertsVersion"
@@ -27,3 +78,5 @@ dependencies {
     testImplementation "androidx.test:core:$testCoreVersion"
     testImplementation "com.squareup.okhttp3:mockwebserver:$okHttpVersion"
 }
+
+apply from: "/Users/mostafaomar/work/fin5-flutter/android/labs/T-ID-Android/gradle/plugin/jacoco-root-report.gradle"

@@ -64,7 +64,11 @@ internal class TidPartnerApiService(private val tidApi: TidApi) {
                 accessToken = jsonObject.getString("access_token"),
                 expiresIn = jsonObject.getInt("expires_in"),
                 idToken = jsonObject.optString("id_token"),
-                refreshToken = jsonObject.getString("refresh_token")
+                 refreshToken = try {
+                        jsonObject.getString("refresh_token")
+                    } catch (e: JSONException) {
+                        ""
+                    }
             )
         }, { getTokenErrorType(it) })
     }

@@ -37,7 +37,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.isVisible
-import ru.tbank.core.tid.R
+import tbank.core.tid.R
 import kotlin.math.roundToInt
 
 internal typealias TidDrawable = R.drawable

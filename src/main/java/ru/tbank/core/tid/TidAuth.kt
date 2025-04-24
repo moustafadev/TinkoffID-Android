@@ -28,6 +28,7 @@ import ru.tbank.core.tid.error.TidInvalidPhoneException
 import ru.tbank.core.tid.error.TidRequestException
 import ru.tbank.core.tid.ui.webView.TidWebViewUiData
 
+
 /**
  * Main facade for T-ID authorization
  */
@@ -82,7 +83,7 @@ public class TidAuth(
                 callbackUrl = callbackUrl,
                 packageName = applicationContext.packageName,
                 redirectUrl = redirectUri,
-                partnerSdkVersion = BuildConfig.VERSION_NAME,
+                partnerSdkVersion = "1.0.5",
             )
         }
     }

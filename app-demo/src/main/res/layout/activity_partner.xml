@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/TidDemo.Theme"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".PartnerActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="16dp"
+        android:animateLayoutChanges="true"
+        android:paddingHorizontal="8dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/partner_auth_input_layout_client_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:hint="@string/partner_auth_client_id"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/partner_auth_edit_text_client_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/partner_auth_default_client_id" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/partner_auth_input_layout_redirect_uri"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/partner_auth_redirect_url"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/partner_auth_input_layout_client_id">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/partner_auth_edit_text_redirect_uri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/partner_auth_default_redirect_uri" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/partner_auth_switch_compat_override_host"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/partner_auth_override_host"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/partner_auth_input_layout_redirect_uri"
+            app:switchPadding="8dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/partner_auth_input_layout_host"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/partner_auth_host"
+            android:visibility="gone"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/partner_auth_switch_compat_override_host">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/partner_auth_edit_text_host"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/partner_auth_default_host" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/partner_auth_switch_compat_white_label_mode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/partner_auth_white_label_mode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/partner_auth_input_layout_host"
+            app:switchPadding="8dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/partner_auth_input_layout_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/partner_auth_phone"
+            android:visibility="gone"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/partner_auth_switch_compat_white_label_mode">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/partner_auth_edit_text_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:text="@string/partner_auth_default_phone_number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/partner_auth_button_reset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/tid_primary_button"
+            android:text="@string/partner_auth_reset"
+            android:textColor="@color/tid_primary_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/partner_auth_input_layout_phone" />
+
+        <TextView
+            android:id="@+id/partner_auth_label_style"
+            style="@style/TidDemo.Label"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="@string/partner_auth_label_style"
+            android:textAlignment="textStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/partner_auth_button_reset" />
+
+        <Spinner
+            android:id="@+id/partner_auth_style_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/partner_auth_label_style"
+            app:layout_constraintStart_toEndOf="@id/partner_auth_label_style"
+            app:layout_constraintTop_toTopOf="@id/partner_auth_label_style" />
+
+        <TextView
+            android:id="@+id/partner_auth_label_size"
+            style="@style/TidDemo.Label"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="@string/partner_auth_label_size"
+            android:textAlignment="textStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/partner_auth_label_style" />
+
+        <Spinner
+            android:id="@+id/partner_auth_size_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/partner_auth_label_size"
+            app:layout_constraintStart_toEndOf="@id/partner_auth_label_size"
+            app:layout_constraintTop_toTopOf="@id/partner_auth_label_size" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/partner_auth_input_layout_button_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/partner_auth_input_button_title"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/partner_auth_label_size">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/partner_auth_edit_text_button_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/partner_auth_sign_in_button_title" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ru.tbank.core.tid.ui.TidSignInButton
+            android:id="@+id/partner_auth_button_tid_auth"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/tid_medium_min_height"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/partner_auth_input_layout_button_title"
+            app:tid_compact="false"
+            app:tid_title="@string/partner_auth_sign_in_button_title" />
+
+        <Button
+            android:id="@+id/partner_auth_button_update_token"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/partner_auth_refresh_btn"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/partner_auth_button_tid_auth" />
+
+        <Button
+            android:id="@+id/partner_auth_button_revoke_token"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/partner_auth_revoke_btn"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/partner_auth_button_update_token" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
